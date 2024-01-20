@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Home from "../components/Home";
 import Projects from "../components/Projects/Projects";
 import ProjectMobile from "../components/Projects/ProjectsMobile";
+import Footer from "../components/Footer";
 
 const HomePage = () => {
   const [toggleSideBar, setToggleSideBar] = useState(false);
@@ -26,6 +27,7 @@ const HomePage = () => {
       <div className="md:hidden">
         <ProjectMobile toggle={handleToggleMenu} />
       </div>
+      <Footer />
     </div>
   );
 };
