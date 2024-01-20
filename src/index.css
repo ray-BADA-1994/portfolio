@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html{
+  scroll-behavior: smooth;
+}
+
+.scroll-down_text{
+    transition: opacity .3s ease-in-out, color .2s ease-in-out;
+    position: relative;
+  }
+  
+  .scroll-down_text:after{
+    content: "Click Me";
+    position: absolute;
+    inset: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity .6s ease-in-out;
+    color: white;
+  }
+  
+  .scroll-down_container:hover .scroll-down_text{
+    /* opacity: 0; */
+    color: black;
+    z-index: -10;
+  }
+  
+  .scroll-down_container:hover .scroll-down_text::after{
+    opacity: 1;
+    z-index: 10;
+  }
+  
+  .scroll-down_icon{
+    transform: translateX(0);
+    transition: transform .5s ease-in-out;
+  }
+
+  .scroll-down_container:hover .scroll-down_icon{
+    transform: translateX(-130px);
+    border: none;
+    /* animation: road 1s ease-in-out .5s alternate infinite; */
+  }
+
+
+  @media screen and (min-width: 1536px) {
+    .scroll-down_container:hover .scroll-down_icon{
+      transform: translateX(-170px);
+      border: none;
+      /* animation: road 1s ease-in-out .5s alternate infinite; */
+    }
+  }
+  
+
+  
+  
+  @keyframes road {
+    0%{
+      /* transform: rotate(270deg); */
+      transform: translateX(-100px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
