@@ -1,12 +1,16 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const RootLayout = () => {
   return (
-    <main>
-      <Outlet />
-    </main>
-  )
-}
+    <>
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </>
+  );
+};
 
-export default RootLayout
+export default RootLayout;

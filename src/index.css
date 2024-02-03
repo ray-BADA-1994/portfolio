@@ -7,6 +7,39 @@
 
 html{
   scroll-behavior: smooth;
+  /* font-family: 'Saira', sans-serif; */
+  font-family: 'Inter Tight', sans-serif;
+}
+
+body{
+  position: relative;
+}
+
+/* navigation */
+/* about-me-link */
+.about-link {
+  background:
+     linear-gradient(
+       to bottom,
+       white 0%,
+       white 100%
+     );
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  text-decoration: none;
+  padding-inline:3px;
+  transition: background-size .5s ease-in-out, color .5s ease-in-out, scale .5s ease-in-out;
+}
+
+.about-link:hover {
+  background-size: 4px 50px;
+  color: #000;
+  scale: 0.95;
+}
+
+.about-link:active {
+  scale: 0.90;
 }
 
 .scroll-down_text{
@@ -69,5 +102,24 @@ html{
     100% {
       transform: translateX(0);
     }
+  }
+
+  /* mouse effect */
+  #follower {
+    position: fixed;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: transform 0.05s ease-in-out, width .05s ease-in-out, height 0.05s ease-in-out;
+    border: 1px solid white;
+    z-index: 10;
+  }
+
+  #follower.expand {
+      width: 50px;
+      height: 50px;     
+      backdrop-filter: invert(80%);
+      background: transparent;
   }
   
