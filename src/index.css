@@ -105,9 +105,19 @@ body{
   }
 
   /* mouse effect */
+
+  @media screen and (max-width: 1024px) {
+    #follower{
+      visibility: hidden;
+      display: none;
+    }
+  }
+
   #follower {
     position: fixed;
+    visibility: visible;
     top: 0;
+    display: block;
     width: 20px;
     height: 20px;
     border-radius: 50%;
