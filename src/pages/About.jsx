@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const AboutPage = () => {
   return (
-    <div className="h-fit md:h-screen w-screen bg-black flex justify-center md:items-center text-[rgba(255,255,255,0.5)] relative overflow-auto pt-5">
+    <div className="h-fit md:h-screen w-screen bg-black flex justify-center md:items-center text-[rgba(255,255,255,0.5)] relative overflow-auto pt-5 pb-10 md:pb-0 ">
       <div className="flex flex-col justify-center w-[300px] mt-20y md:pt-0 md:w-[500px]">
         <Link to={'/'} className="text-sm text-[rgba(255,255,255,0.7)] about-link w-fit mb-10 md:hidden ">Home</Link>
 
