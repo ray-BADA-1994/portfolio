@@ -20,28 +20,33 @@ const Home = ({ close }) => {
   useEffect(() => {
     //select the created element
     const follower = document.getElementById("follower");
-    const caption = document.querySelector(".home-caption")
+    const caption = document.querySelector(".home-caption");
 
-    // console.log(follower);
-
-    document.addEventListener("mousemove", (event) => {
-      // Update the position of the follower element
-      const x = event.clientX;
-      const y = event.clientY;
+    const handleFollow = (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
       follower.style.transform = `translate(${x}px, ${y}px)`;
-    });
+    };
 
-    caption.addEventListener("mouseover", (event) => {
-       follower.classList.add("expand");
-    })
+    const handleAddClassName = () => {
+      follower.classList.add("expand");
+    };
 
-    caption.addEventListener("mouseout", (event) => {
+    const handleRemoveClassName = () => {
       follower.classList.remove("expand");
-   })
+    };
 
-    
+    document.addEventListener("mousemove",handleFollow);
 
-    // return () => removeEventListener(move)
+    caption.addEventListener("mouseover", handleAddClassName);
+
+    caption.addEventListener("mouseout", handleRemoveClassName);
+
+    return () => {
+      removeEventListener("mousemove", handleFollow);
+      removeEventListener("mouseover", handleAddClassName);
+      removeEventListener("mouseout", handleRemoveClassName);
+    };
   }, []);
 
   return (
@@ -49,7 +54,12 @@ const Home = ({ close }) => {
       <div className=" h-screen lg:grid grid-cols-[2fr_1fr]y lg:grid-cols-[1fr_400px] flex flex-col w-full px-4 md:px-0 md:w-[400px] lg:w-full justify-center items-start gap-10 lg:gap-20">
         {/* LEFT SIDE */}
         <div className="  flex justify-end items-center lg:h-full relative">
-          <Link to={'/about'} className="absolute hidden w-fit lg:block  md:top-5 text-sm md:right-5 text-[rgba(255,255,255,0.7)] about-link ">About me</Link>
+          <Link
+            to={"/about"}
+            className="absolute hidden w-fit lg:block  md:top-5 text-sm md:right-5 text-[rgba(255,255,255,0.7)] about-link "
+          >
+            About me
+          </Link>
           <div className="home-content flex-1y lg:h-full  flex flex-col justify-center space-y-5 lg:space-y-10">
             <h1 className="my-name w-fit font-light text-base text-[rgba(255,255,255,0.7)]  md:text-white border border-[rgba(255,255,255,0.2)] md:border-white px-2 py-1">
               Chinwendu Chukwu

@@ -106,18 +106,11 @@ body{
 
   /* mouse effect */
 
-  @media screen and (max-width: 1024px) {
-    #follower{
-      visibility: hidden;
-      display: none;
-    }
-  }
-
   #follower {
-    position: fixed;
+    position: absolute;
     visibility: visible;
     top: 0;
-    display: block;
+    /* display: block; */
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -125,6 +118,15 @@ body{
     border: 1px solid white;
     z-index: 10;
   }
+
+  @media screen and (max-width: 1024px) {
+    #follower{
+      visibility: hidden;
+      /* display: none; */
+    }
+  }
+
+ 
 
   #follower.expand {
       width: 50px;
